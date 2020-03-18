@@ -1,5 +1,5 @@
 mqtt:
-  image: toke/mosquitto
+  image: eclipse-mosquitto:latest
   container_name: mqtt
   ports:
     - "1883:1883"
@@ -28,6 +28,7 @@ grafana:
   container_name: grafana
   ports:
     - "3000:3000"
+  user: "0"
   volumes:
     - $PWD/srv/grafana/data:/var/lib/grafana
 
