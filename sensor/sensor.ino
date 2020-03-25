@@ -12,15 +12,16 @@ Adafruit_CCS811 ccs;
 float temperature, humidity, pressure, altitude, eco2, tvoc;
 
 /*Put your SSID & Password*/
-/*
-const char* ssid = "meme_king";  // Enter SSID here
-const char* password = "wednesday420";  //Enter Password here
-*/
 
+const char* ssid = "eksperter_i_team";  // Enter SSID here
+const char* password = "wednesday420";  //Enter Password here
+
+const char* mqtt_server = "192.168.2.100";
+/*
 const char* ssid = "Nedre Alle";  // Enter SSID here
 const char* password = "vi bor i nedre alle";  //Enter Password here
-const char* mqtt_server = "192.168.0.131";
-
+const char* mqtt_server = "192.168.0.152";
+*/
 WiFiClient espClient;
 PubSubClient client(espClient);
  
@@ -80,9 +81,9 @@ void reconnect() {
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("outTopic", "hello world");
+      /*client.publish("outTopic", "hello world");*/
       // ... and resubscribe
-      client.subscribe("inTopic");
+      /*client.subscribe("inTopic");*/
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());

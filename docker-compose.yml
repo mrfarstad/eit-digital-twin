@@ -1,0 +1,41 @@
+mqtt:
+  image: eclipse-mosquitto:latest
+  container_name: mqtt
+  ports:
+    - "1883:1883"
+    - "9001:9001"
+  volumes:
+    - $PWD/srv/mqtt/config:/mqtt/config:ro
+    - $PWD/srv/mqtt/log:/mqtt/log/
+    - $PWD/srv/mqtt/data:/mqtt/data/
+
+influxdb:
+  image: influxdb:latest
+  container_name: influxdb
+  ports:
+    - "8086:8086"
+  volumes:
+    - $PWD/srv/influxdb/data:/var/lib/influxdb
+
+telegraf:
+  image: telegraf:latest
+  container_name: telegraf
+  volumes:
+    - $PWD/srv/telegraf/:/etc/telegraf:ro
+
+grafana:
+  image: grafana/grafana:latest
+  container_name: grafana
+  ports:
+    - "3000:3000"
+  user: "0"
+  volumes:
+    - $PWD/srv/grafana/data:/var/lib/grafana
+
+chronograf:
+  image: chronograf:latest
+  container_name: chronograf
+  ports:
+    - "8888:8888"
+  volumes:
+    - $PWD/srv/chronograf:/var/lib/chronograf
