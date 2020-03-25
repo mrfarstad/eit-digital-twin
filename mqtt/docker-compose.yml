@@ -1,0 +1,8 @@
+mqtt:
+  image: toke/mosquitto
+  ports:
+    - "1883:1883"
+  volumes:
+    - ~/srv/mqtt/config:/mqtt/config:ro
+    - ~/srv/mqtt/log:/mqtt/log/
+    - ~/srv/mqtt/data:/mqtt/data/
