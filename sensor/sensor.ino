@@ -12,16 +12,16 @@ Adafruit_CCS811 ccs;
 float temperature, humidity, pressure, altitude, eco2, tvoc;
 
 /*Put your SSID & Password*/
-/*
-const char* ssid = "meme_king";  // Enter SSID here
-const char* password = "wednesday420";  //Enter Password here
-*/
-/*const char* mqtt_server = "192.168.0.101";*/
 
+const char* ssid = "eksperter_i_team";  // Enter SSID here
+const char* password = "wednesday420";  //Enter Password here
+
+const char* mqtt_server = "192.168.2.100";
+/*
 const char* ssid = "Nedre Alle";  // Enter SSID here
 const char* password = "vi bor i nedre alle";  //Enter Password here
 const char* mqtt_server = "192.168.0.152";
-
+*/
 WiFiClient espClient;
 PubSubClient client(espClient);
  
