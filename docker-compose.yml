@@ -31,11 +31,4 @@ grafana:
   user: "0"
   volumes:
     - $PWD/srv/grafana/data:/var/lib/grafana
-
-chronograf:
-  image: chronograf:latest
-  container_name: chronograf
-  ports:
-    - "8888:8888"
-  volumes:
-    - $PWD/srv/chronograf:/var/lib/chronograf
+    - $PWD/srv/grafana/config/grafana.ini:/etc/grafana/grafana.ini
