@@ -1,3 +1,0 @@
-Server:
-	NodeJs, Express,, Request WS (web sockets)
-
